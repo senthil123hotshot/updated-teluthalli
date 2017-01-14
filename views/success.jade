@@ -1,0 +1,25 @@
+//layout of pdf file upload
+extends layout
+block content
+  if(error)
+  h5.color-red= error
+  form.a(method='post', enctype='multipart/form-data',action='/admin/pdfupload')
+      table(border='1',align='center',width='50%')
+        tr
+          p
+            td
+              label UPLOAD PDF :
+            td
+              input(type='file', name='file', accept='application/pdf')
+        tr
+          p
+            td
+              label NAME OF MAGAZINE :
+            td
+              input(type='text', name='pdfname', placeholder='please enter the pdf name', required='')
+              input(type='hidden',name='image', value='#{image}')
+        tr
+          p
+            td(colspan='2')
+              button(type='submit', name='submit') Upload PDF
+                   

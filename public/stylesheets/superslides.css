@@ -1,0 +1,357 @@
+.bgimg1 {
+    background: #050A15 url('https://s3-ap-southeast-1.amazonaws.com/ensiegwebsiteimages/1-01.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size:   cover;
+    -o-background-size: cover;
+    background-size: cover%;
+    height: 80vh !important;
+}
+
+.bgimg2 {
+    background: #050A15 url('https://s3-ap-southeast-1.amazonaws.com/ensiegwebsiteimages/1-02.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 80vh !important;
+}
+
+.bgimg3 {
+    background:  #050A15 url('https://s3-ap-southeast-1.amazonaws.com/ensiegwebsiteimages/1-03.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 80vh !important;
+}
+
+#slides {
+  position: relative;
+  top:-25px;
+  height: 100%;
+  height: 70vh !important;
+}
+
+#slides .slides-container {
+  display: none;
+  height: 70vh !important;
+}
+
+#slides .scrollable {
+  *zoom: 1;
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+}
+
+#slides .scrollable:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.large-text1{
+    position: relative;
+    padding-right: 0px;
+    font-family: myriadsetprotext !important;
+    margin: 250px 0px 0px 0px;
+	font-size: 60px;
+    color: #050A15;
+      
+/*	font-weight: 400;*/
+/*	text-transform: uppercase;*/
+	text-align: left;
+/*	letter-spacing: 2px;*/
+}
+
+.small-text1{
+    position: relative;
+    padding-right: 0px;
+    font-family: myriadsetprothin !important;
+    margin: 0px 0px 0px 0px;
+	font-size: 40px;
+    color: #050A15;
+    
+
+/*	font-weight: 400;*/
+/*	text-transform: uppercase;*/
+	text-align: left;
+/*	letter-spacing: 2px;*/
+}
+
+.large-text2{
+    position: relative;
+    padding-right: 0px;
+    font-family: myriadsetprotext !important;
+    margin: 0px 0px 0px 0px;
+	font-size: 60px;
+    color: #050A15;
+	text-align: left;
+}
+
+.small-text2{
+    position: relative;
+    padding-right: 0px;
+    font-family: myriadsetprothin !important;
+    margin: 0px 0px 0px 0px;
+	font-size: 40px;
+    color: #050A15;
+
+	text-align: left;
+}
+
+.large-text3{
+    position: relative;
+    padding-right: 0px;
+    font-family: myriadsetprotext !important;
+    margin: 0px 0px 0px 0px;
+	font-size: 60px;
+    color: #050A15;
+	text-align: left;
+}
+
+.small-text3{
+    position: relative;
+    padding-right: 0px;
+    font-family: myriadsetprothin !important;
+    margin: 0px 0px 0px 0px;
+	font-size: 40px;
+    color: #050A15;
+
+	text-align: left;
+}
+
+.slides-navigation {
+  box-shadow: none;
+  background:none;
+  margin: 0 auto;
+  position: absolute;
+  z-index: 3;
+  top: 46%;
+  width: 100%;
+}
+
+.slides-navigation a {
+  background:none;
+  position: absolute;
+  top:60px;
+  display: block;
+  overflow: hidden;
+  width: 30px;
+  height:100px;
+}
+
+.slides-navigation a.prev {
+    
+    left: 25px;
+    background: url(https://s3-ap-southeast-1.amazonaws.com/ensiegwebsiteimages/prev.png) no-repeat;
+}
+
+.slides-navigation a.next {
+    right: 25px;
+    background: url(https://s3-ap-southeast-1.amazonaws.com/ensiegwebsiteimages/next.png) no-repeat;
+}
+
+.slides-pagination {
+  box-shadow: none;
+  background:none;
+  margin-bottom: 0px;
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.slides-pagination a {
+    background: #f0f0f4;
+  border-radius: 15px;
+  width: 10px;
+  height: 10px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=");
+  margin: 7px;
+  overflow: hidden;
+  text-indent: -100%;
+}
+
+.slides-pagination a.current {
+  background: #1fd6ba;
+}
+
+#message-box {
+  z-index: 9999;
+  float: left;
+  margin-left: 30px;
+}
+
+
+@media (max-width: 800px) {
+  .container2-text1 {
+      margin-top: 90px;
+      margin-bottom: 20px;
+      margin-left: 30px;
+      padding-left: 0px;
+      padding-right: 0px;
+      padding-bottom: 0px;
+      position: absolute;
+  }
+  .large-text1 {
+    font-size: 30px;
+    color: black;
+    position: relative;
+    font-family: myriadsetprotext !important;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    color: #050A15;;
+    text-align: left;
+  }
+  .small-text1 { margin-bottom: 20px; font-size: 20px; color: #050A15;}
+
+  .container2-text2 {
+      padding-right: 0;
+      padding-left: 0;
+      margin-top: 200px;
+      margin-left: 50px;
+      position: static;
+  }
+  .large-text2{
+  	font-size: 25px;
+  }
+
+  .small-text2{
+  	font-size: 15px;
+  }
+
+  .container2-text3 {
+      padding-right: 0px;
+      padding-left: 0px;
+      margin-top: 150px;
+      margin-left: 30px;
+      position: static;
+  }
+
+  .large-text3{
+  	font-size: 25px;
+  }
+
+  .small-text3{
+  	font-size: 15px;
+  }
+}
+
+@media only screen and (device-width:768px){
+  /*ipad vertical view*/
+  .container2-text1 {
+      margin-top: 300px;
+      margin-left: 100px;
+  }
+  .large-text1 {
+    font-size: 40px;
+    color: black;
+    position: relative;
+    font-family: myriadsetprotext !important;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    color: #050A15;;
+    text-align: left;
+  }
+  .small-text1 {font-size: 25px;}
+
+  .container2-text2 {
+      margin-top: 500px;
+      margin-left: 200px;
+  }
+  .large-text2{
+    font-size: 40px;
+  }
+
+  .small-text2{
+    font-size: 25px;
+  }
+
+  .container2-text3 {
+      margin-top: 200px;
+      margin-left: 100px;
+  }
+
+  .large-text3{
+    font-size: 40px;
+  }
+
+  .small-text3{
+    font-size: 25px;
+  }
+}
+
+@media only screen and (device-width:1024px){
+  /*ipad landscape mode*/
+  .container2-text1 {
+      margin-top: 250px;
+      margin-left: 150px;
+      padding-left: 0px;
+      padding-right: 0px;
+      padding-bottom: 0px;
+      position: absolute;
+  }
+  .large-text1 {
+    font-size: 40px;
+    color: black;
+    position: relative;
+    font-family: myriadsetprotext !important;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    color: #050A15;
+    text-align: left;
+  }
+  .small-text1 {font-size: 25px;}
+
+  .container2-text2 {
+      margin-top: 450px;
+      margin-left: 200px;
+  }
+  .large-text2{
+    font-size: 40px;
+  }
+
+  .small-text2{
+    font-size: 25px;
+  }
+
+  .container2-text3 {
+      margin-top: 200px;
+      margin-left: 100px;
+  }
+
+  .large-text3{
+    font-size: 40px;
+  }
+
+  .small-text3{
+    font-size: 25px;
+  }
+}
+
+@media only screen and (device-width:414px){
+  /*iphone 6 plus*/
+  .container2-text1 {
+      margin-top: 150px;
+      margin-left: 50px;
+  }
+  .container2-text2 {
+      margin-top: 300px;
+      margin-left: 50px;
+  }
+  .container2-text3 {
+      margin-top: 150px;
+      margin-left: 50px;
+  }
+}

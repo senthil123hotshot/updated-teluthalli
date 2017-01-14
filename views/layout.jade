@@ -1,0 +1,43 @@
+// base file which can be used in another file
+doctype html
+html
+  head
+  link(rel='stylesheet', href='css/own.css', type='text/css')
+  link(rel="shortcut icon" type="image/x-icon" href="images/logo.png")
+  link(href='https://fonts.googleapis.com/css?family=Ramabhadra', rel='stylesheet')
+  style.
+    @font-face{
+            font-family: title;
+            src: local("title Neue Bold"),
+            local("titleNeue-Bold"),
+            url(font/ProximaNova-Semibold.otf);
+    }
+    .a{
+      margin-right:200px;
+      text-align:center;
+    }
+    .x{
+      font-family: Ramabhadra;
+      font-size:25px;
+    
+    }
+    a.y{
+      font-family: title;
+      float:right;
+        }
+  body
+    article
+      nav
+        ul
+          a.x తెలుగు తల్లి కెనడా పత్రిక
+          if(session_info.is_loggedin)
+          a.no-margins.color-white.y(href='/admin/logout') LOGOUT 
+          br
+          br
+          hr
+          br
+          
+    block content    
+    footer.footer
+          hr
+          a(href='http://vectorx.co/index.html') Designed & Developed by VectorX

@@ -1,0 +1,26 @@
+// layout of image upload file
+extends layout
+block content
+  if(error)
+  h5.color-red= error
+  form.a(method='post', enctype='multipart/form-data')
+      table(border='1',align='center',width='50%')
+        tr
+          p
+            td
+              label UPLOAD IMAGE :
+            td
+              input(type='file', name='fileToUpload', accept='image/*')
+        tr
+          p
+            td(colspan='2')
+              button(type='submit', name='submit') Upload IMAGE
+        tr
+          p
+            td(colspan='2')
+              label
+                | Browse Previous Magazine...  
+                a(href='/admin/admindisplay') click here to view PDF.             
+
+      
+                

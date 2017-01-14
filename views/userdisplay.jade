@@ -1,0 +1,238 @@
+//here the admin can view the pdf files or  delete it and upload new one. 
+block content
+doctype html
+html
+head(lang='en')
+  meta(charset='UTF-8')
+  meta#viewport(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1')
+  title తెలుగు తల్లి కెనడా పత్రిక
+  link(rel='shortcut icon' type='image/x-icon' href='images/logo.png')
+  link(href='https://fonts.googleapis.com/css?family=Ramabhadra', rel='stylesheet')
+  link(rel='stylesheet', href='css/own.css', type='text/css')
+  link(href='example-assets/css/bootstrap.min.css', rel='stylesheet', type='text/css')
+  link(href='example-assets/css/book.css', rel='stylesheet')
+  // Flipbook StyleSheet
+  link(href='css/dflip.css', rel='stylesheet', type='text/css')
+  // Icons Stylesheet
+  link(href='css/themify-icons.css', rel='stylesheet', type='text/css')
+  script(language='JavaScript').
+    function GetCookie (name) {
+    var arg = name + "=";
+    var alen = arg.length;
+    var clen = document.cookie.length;
+    var i = 0;
+    while (i < clen) {
+    var j = i + alen;
+    if (document.cookie.substring(i, j) == arg)
+    return getCookieVal (j);
+    i = document.cookie.indexOf(" ", i) + 1;
+    if (i == 0) break;
+    }
+    return null;
+    }
+    function SetCookie (name, value) {
+    var argv = SetCookie.arguments;
+    var argc = SetCookie.arguments.length;
+    var expires = (argc > 2) ? argv[2] : null;
+    var path = (argc > 3) ? argv[3] : null;
+    var domain = (argc > 4) ? argv[4] : null;
+    var secure = (argc > 5) ? argv[5] : false;
+    document.cookie = name + "=" + escape (value) +
+    ((expires == null) ? "" : ("; expires=" + expires.toGMTString())) +
+    ((path == null) ? "" : ("; path=" + path)) +
+    ((domain == null) ? "" : ("; domain=" + domain)) +
+    ((secure == true) ? "; secure" : "");
+    }
+    function DeleteCookie (name) {
+    var exp = new Date();
+    exp.setTime (exp.getTime() - 1);
+    var cval = GetCookie (name);
+    document.cookie = name + "=" + cval + "; expires=" + exp.toGMTString();
+    }
+    var expDays = 30;
+    var exp = new Date();
+    exp.setTime(exp.getTime() + (expDays*24*60*60*1000));
+    function amt(){
+    var count = GetCookie('count')
+    if(count == null) {
+    SetCookie('count','1')
+    return 1
+    }
+    else {
+    var newcount = parseInt(count) + 1;
+    DeleteCookie('count')
+    SetCookie('count',newcount,exp)
+    return count
+    }
+    }
+    function getCookieVal(offset) {
+    var endstr = document.cookie.indexOf (";", offset);
+    if (endstr == -1)
+    endstr = document.cookie.length;
+    return unescape(document.cookie.substring(offset, endstr));
+    }
+  style.
+    .a{
+      font-family:Ramabhadra;
+      background-color:#FFF;
+      margin:20px;
+    }
+    @font-face{
+      font-family: Description;
+            src: local("Helvetica Neue Bold"),
+                local("DescriptionNeue-Bold"),
+                url(font/ProximaNova-Semibold.otf);
+    }
+    @font-face{
+            font-family: date;
+            src: local("Helvetica Neue Bold"),
+                local("DescriptionNeue-Bold"),
+                url(font/ProximaNova-RegularItalic.otf);
+
+        }
+         @font-face{
+            font-family: name;
+            src: local("Helvetica Neue Bold"),
+                local("DescriptionNeue-Bold"),
+                url(font/ProximaNova-Semibold.otf);
+
+        }
+    .x{
+      font-family:date;
+      font-size:15px;
+    }
+    .y{
+      font-family:name;
+      font-size:20px;
+    }
+    .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    }
+    .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+    }
+    .sidenav a:hover, .offcanvas a:focus{
+    color: #4d1aca;
+    }
+    .log{
+      font-family:Description;
+      float:right;
+    }
+    .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;doctype html
+
+    }
+    .f{
+    font-family:name;
+    position:fixed;
+    height:50px;
+    background-color:blues;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin-bottom:25px;
+    text-align:center;
+      }
+    .v{
+      background-size:cover;
+    }
+    .facebook{
+      
+    }
+    .counter{
+      float:right;
+      color:red;
+      font-size:18px;
+    }
+    .im{
+        float:right;
+    }
+  
+    
+    @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+    }
+body
+  #mySidenav.sidenav
+    a.closebtn(href='javascript:void(0)', onclick='closeNav()') ×
+    each d in data
+      a#df_manual_custom._df_custom(source='#{d.filepath}') 
+          p.x  #{d.date}
+          p.y  #{d.pdfname}
+        
+    //here the open and close nav bar function is called
+    #fb-root
+  script.
+    (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8&appId=279873085763430";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+  script.
+    function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    }
+    function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    }
+  .content.absolute-stretch
+    .a
+      //here the function is been implemented using onclick function
+      span(style='font-size:30px;cursor:pointer', onclick='openNav()') ☰
+      span(style='font-size:30px') తెలుగు తల్లి కెనడా పత్రిక
+      p.counter
+        script(language='JavaScript').
+          document.write("Site Visits : &nbsp;" + amt() + "")
+        
+      section.select-book  Select a Magazine below to start with
+      section._df_books
+        //here each data is been fetched coming from the route display and been used in the below div tag
+        each d in data
+            #df_manual._df_thumb.v(source='#{d.filepath}', tags='#{d.date}', thumb='#{d.imagepath}')  #{d.pdfname}
+            a.size(href='/admin/delete/#{d.fileimage_id}') Delete  
+        #facebook
+          iframe(src='https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTeluguTalliCanada%2F&tabs=timeline&width=500&height=499&small_header=false&adapt_container_width=true&hide_cover=true&show_facepile=true&appId', width='500', height='499', style='border:none;overflow:hidden', scrolling='no', frameborder='0', allowtransparency='true')
+
+              //- img(src='#{datas.imagepath}' , width="90px" ,height="90px")
+      // Container is not required for lightbox
+      // <div id="flipbookContainer"></div>
+      // jQuery 1.9.1 or above
+    .f
+      hr
+      a(href='http://vectorx.co/index.html') Designed & Developed by VectorX &nbsp;
+      
+      script(src='js/libs/jquery.min.js', type='text/javascript')
+      // Flipbook main Js file
+      script(src='js/dflip.js', type='text/javascript')
+      style.
+        #df_book_custom{
+        color:#ddd;
+        text-decoration: underline;
+        cursor: pointer;
+        }
+        .upper-fold{
+        height: 100%;
+        }
+  

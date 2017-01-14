@@ -1,0 +1,59 @@
+// login layout
+doctype html
+head
+    meta(charset='UTF-8')
+    meta(content='width=device-width,initial-scale=1.0,maximum-scale=1.0', name='viewport')
+    
+    title తెలుగు తల్లి కెనడా పత్రిక
+    
+    // Font
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CRoboto:300,400,500,700', rel='stylesheet', type='text/css')
+    // Css
+    link(rel='stylesheet', href='../../stylesheets/core.min2.css')
+    link(rel='stylesheet', href='../../stylesheets/skin.css')
+    //if lt IE 9
+        script(type='text/javascript', src='http://html5shiv.googlecode.com/svn/trunk/html5.js')
+// Overlay Navigation Menu
+body.shop.home-page.bkg-red
+    .wrapper.reveal-side-navigation
+        .wrapper-inner
+            // Content
+            .content.clearfix
+                // Fullscreen Sections
+                section.fullscreen-sections-wrapper.no-navigation.bkg-red
+                    .section-block.fullscreen-section
+                        .row
+                            .column.width-12.center
+                                .section-block.signup-3
+                                    .signup-inner
+                                        .row
+                                            .thumbnail.mb-30
+                                                img(src='', width='70', alt='logo')
+                                            .column.width-12.color-black
+                                                h2 LOG IN
+                                                if(error)
+                                                    h5.color-red= error
+                                            .column.width-12
+                                                .signup-form-container
+                                                    form.login-form(method='post')
+                                                        .row
+                                                            .column.width-12
+                                                                input.form-fname.form-element.medium(type='text', name='name', placeholder='Username', tabindex='1', required)
+                                                            .column.width-12
+                                                                input.form-password.form-element.medium(type='password', name='password', placeholder='Password', tabindex='2', required)
+                                                            .column.width-12.pt-20
+                                                                input.form-submit.button.bkg-black.bkg-hover-red.color-white.color-hover-white.no-margin-bottom.rounded(type='submit', value='LOG IN')
+                                                        
+                                                    
+                        // Fullscreen Sections End
+            // Content End
+    // Js
+    script(src='../../javascripts/jquery-1.11.2.min.js')
+    script(src='../../javascripts/timber.master.min.js')
+    script.
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-71930908-5', 'auto');
+        ga('send', 'pageview');
+    
